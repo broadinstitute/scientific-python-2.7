@@ -33,20 +33,15 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # install ssh server
-RUN apt-get -y install openssh-server
-RUN mkdir -p /var/run/sshd
-RUN locale-gen en_US en_US.UTF-8
+RUN apt-get -y install openssh-server; mkdir -p /var/run/sshd; locale-gen en_US en_US.UTF-8
 
 # install supervisor
 RUN apt-get -y install supervisor
 ADD supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
 
-# basic tools
-RUN apt-get install -y git-core curl wget vim-tiny nano
-
-# compilers
-RUN apt-get install -y gfortran build-essential make gcc build-essential
+# compilers and basic tools
+RUN apt-get install -y gfortran build-essential make gcc build-essential apt-get install -y git-core curl wget vim-tiny nano
 
 # install python
 ADD repo.sh /tmp/repo.sh
@@ -54,31 +49,21 @@ ADD fkrull-deadsnakes-precise.list /tmp/fkrull-deadsnakes-precise.list
 RUN chmod 755 /tmp/repo.sh; /tmp/repo.sh
 RUN apt-get update
 RUN apt-get install -y python2.7 python2.7-dev
-RUN apt-get install -y python-virtualenv
 
 # database client
-# sqllite client
-RUN apt-get install libsqlite3-dev sqlite3
-# Postgresql client
-RUN apt-get install -y postgresql-client-9.1 postgresql-client-common libpq5 libpq-dev
-# Needed for mysql-python
-RUN apt-get -y install libmysqlclient-dev
+# sqllite, postgresql, mysql client
+RUN apt-get install -y libsqlite3-dev sqlite3 postgresql-client-9.1 postgresql-client-common libpq5 libpq-dev libmysqlclient-dev
 
 # needed for httplib2
 RUN apt-get install -y libxml2-dev libxslt-dev
 
-# atlas needed for scikit-learn
-#RUN apt-get install -y libatlas-dev libatlas3-base
-
 # distribute
 RUN wget http://python-distribute.org/distribute_setup.py
-RUN python distribute_setup.py
-RUM rm -f /distribute*
+RUN python distribute_setup.py; rm -f /distribute*
 
 # pip
 RUN wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py 
-RUN python get-pip.py
-RUN rm -f /get-pip.py
+RUN python get-pip.py; rm -f /get-pip.py
 
 RUN apt-get install -y libfreetype6 libfreetype6-dev
 
@@ -102,6 +87,10 @@ ADD lapack.sh /tmp/lapack.sh
 RUN chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
 ENV LAPACK /usr/local/lib/liblapack.a
 
+# virtualenv
+# This gets a current version.  Do not use the version packaged with ubuntu
+RUN pip install virtualenv==1.10.1
+
 # scientific python packages
 ADD packages.sh /tmp/packages.sh
 ADD requirements.sh /tmp/requirements.sh
@@ -114,8 +103,7 @@ RUN echo 'root:scivm' | chpasswd
 RUN rm -rf /etc/update-motd.d /etc/motd
 ADD motd /etc/motd
 
-EXPOSE 8888
-EXPOSE 22
+EXPOSE 8888 22
 
 # run container with supervisor
 CMD ["/usr/bin/supervisord"]
