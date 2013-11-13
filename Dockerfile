@@ -41,7 +41,7 @@ ADD supervisord.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /var/log/supervisor
 
 # compilers and basic tools
-RUN apt-get install -y gfortran build-essential make gcc build-essential apt-get install -y git-core curl wget vim-tiny nano
+RUN apt-get install -y gfortran build-essential make gcc build-essential git-core curl wget vim-tiny nano
 
 # install python
 ADD repo.sh /tmp/repo.sh
