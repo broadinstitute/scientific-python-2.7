@@ -25,17 +25,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-FROM ubuntu:12.04
-
-# add scripts to image
-ADD scripts /tmp
-
-ENV BLAS /usr/local/lib/libfblas.a
-ENV LAPACK /usr/local/lib/liblapack.a
-
-RUN chmod 755 /tmp/base.sh; /tmp/base.sh
-
-EXPOSE 8888 22
-
-# run container with supervisor
-CMD ["/usr/bin/supervisord"]
+# if there is a file called /root/home then use the local mirror
+if [ -e "/root/home" ]
+then 
+   echo "deb ftp://mirror.hetzner.de/ubuntu/packages precise main restricted universe multiverse" > /etc/apt/sources.list
+else
+   echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+fi
+apt-get update
+apt-get upgrade -y
