@@ -1,7 +1,7 @@
 Scientific computing with Python 2.7
 ====================================
 
-Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others built into Virtual Machines such as Virtuablbox, VMWare, Docker, KVM, Zen
+Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others built into Virtual Machines such as Virtualbox, VMWare, Docker, KVM, Zen
 
 Usage
 -----
