@@ -39,7 +39,6 @@ mkdir -p /var/log/supervisor
 apt-get install -y gfortran build-essential make gcc build-essential git-core curl wget vim-tiny nano
 
 # install python
-chmod 755 /tmp/repo.sh; /tmp/repo.sh
 apt-get update
 apt-get install -y python2.7 python2.7-dev
 
@@ -76,5 +75,8 @@ rm -rf /etc/update-motd.d
 
 # set root password
 echo 'root:scivm' | chpasswd
+
+# create a virtual environment
+virtualenv --python=python2.7 /opt/ve
 
 

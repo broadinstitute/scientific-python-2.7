@@ -25,6 +25,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+source /opt/ve/bin/activate
 pip install distribute==0.6.49
 pip install pyzmq==14.0.0
 pip install numpy==1.8.0

@@ -26,24 +26,30 @@
 # SOFTWARE.
 #
 
+# set scripts executable
+chmod 755 /tmp/*.sh
+
 # set the apt mirror
 touch /root/home
-chmod 755 /tmp/aptlocal.sh; /tmp/aptlocal.sh
+/tmp/aptlocal.sh
+
+# setup deadsnakes apt repo
+/tmp/repo.sh
 
 # install depedencies for python packages
-chmod 755 /tmp/deps.sh; /tmp/deps.sh
+/tmp/deps.sh
 
 # hdf5
-chmod 755 /tmp/hdf5_install.sh; /tmp/hdf5_install.sh
+/tmp/hdf5_install.sh
 
 # blas
-chmod 755 /tmp/blas.sh; /tmp/blas.sh
+/tmp/blas.sh
 
 # lapack
-chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
+/tmp/lapack.sh
 
 # scientific python packages
-chmod 755 /tmp/packages.sh; /tmp/packages.sh
+/tmp/packages.sh
 
 # set apt to global setting
-chmod 755 /tmp/aptglobal.sh; /tmp/aptglobal.sh
+/tmp/aptglobal.sh

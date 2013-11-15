@@ -9,11 +9,12 @@
       "type": "shell",
       "scripts": [
         "scripts/aptlocal.sh",
+        "scripts/repo.sh",
         "scripts/deps.sh",
         "scripts/hdf5_install.sh",
         "scripts/blas.sh",
         "scripts/lapack.sh",
-        "scripts/packages.sh",
+        "scripts/requirements.sh",
         "scripts/aptglobal.sh"
       ],
       "override": {
