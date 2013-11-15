@@ -28,6 +28,11 @@
 # if there is a file called /root/home then use the local mirror
 #
 # Clean up, then set apt repository to universal settting
+#
 apt-get clean
 echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 apt-get update
+
+# remove proxy
+echo "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\"" > /etc/environment
+

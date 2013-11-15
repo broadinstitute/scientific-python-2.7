@@ -28,10 +28,10 @@
 
 # set the apt mirror
 touch /root/home
-chmod 755 /tmp/apt.sh; /tmp/apt.sh
+chmod 755 /tmp/aptlocal.sh; /tmp/aptlocal.sh
 
 # install depedencies for python packages
-chmod 755 /tmp/deps.sh; /tmp/dep.sh
+chmod 755 /tmp/deps.sh; /tmp/deps.sh
 
 # hdf5
 chmod 755 /tmp/hdf5_install.sh; /tmp/hdf5_install.sh
@@ -44,3 +44,6 @@ chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
 
 # scientific python packages
 chmod 755 /tmp/packages.sh; /tmp/packages.sh
+
+# set apt to global setting
+chmod 755 /tmp/aptglobal.sh; /tmp/aptglobal.sh

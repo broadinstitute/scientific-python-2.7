@@ -26,8 +26,13 @@
 # SOFTWARE.
 #
 # if there is a file called /root/home then use the local mirror
+#
+# set proxy
+echo "http_proxy=http://88.198.57.112:3128" >> /etc/environment
+
 if [ -e "/root/home" ]
 then 
+   echo "Acquire::http::Proxy \"http://88.198.57.112:3128\";" >> /etc/apt/apt.conf
    echo "deb ftp://mirror.hetzner.de/ubuntu/packages precise main restricted universe multiverse" > /etc/apt/sources.list
 else
    echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list

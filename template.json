@@ -3,7 +3,7 @@
     {
       "type": "shell",
       "scripts": [
-        "scripts/apt.sh",
+        "scripts/aptlocal.sh",
         "scripts/deps.sh",
         "scripts/hdf5_install.sh.sh",
         "scripts/blas.sh",
