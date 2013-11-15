@@ -2,7 +2,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "virtualbox.sh",
+      "script": "scripts/virtualbox.sh",
       "only": ["virtualbox"]
     },
     {
@@ -10,7 +10,7 @@
       "scripts": [
         "scripts/aptlocal.sh",
         "scripts/deps.sh",
-        "scripts/hdf5_install.sh.sh",
+        "scripts/hdf5_install.sh",
         "scripts/blas.sh",
         "scripts/lapack.sh",
         "scripts/packages.sh",
@@ -97,18 +97,7 @@
         "numvcpus": "2",
         "cpuid.coresPerSocket": "1"
       }
-    },
-    {
-      "type": "amazon-ebs",
-      "access_key": "YOUR KEY HERE",
-      "secret_key": "YOUR SECRET KEY HERE",
-      "region": "us-east-1",
-      "source_ami": "ami-de0d9eb7",
-      "instance_type": "t1.micro",
-      "ssh_username": "ubuntu",
-      "ami_name": "packer-quick-start {{timestamp}}",
     }
-  }
   ],
   "post-processors": ["vagrant"]
 }
