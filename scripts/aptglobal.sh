@@ -25,22 +25,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-
-# set the apt mirror
-touch /root/home
-chmod 755 /tmp/apt.sh; /tmp/apt.sh
-
-# install depedencies for python packages
-chmod 755 /tmp/deps.sh; /tmp/dep.sh
-
-# hdf5
-chmod 755 /tmp/hdf5_install.sh; /tmp/hdf5_install.sh
-
-# blas
-chmod 755 /tmp/blas.sh; /tmp/blas.sh
-
-# lapack
-chmod 755 /tmp/lapack.sh; /tmp/lapack.sh
-
-# scientific python packages
-chmod 755 /tmp/packages.sh; /tmp/packages.sh
+# if there is a file called /root/home then use the local mirror
+#
+# Clean up, then set apt repository to universal settting
+apt-get clean
+echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+apt-get update
