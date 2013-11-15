@@ -2,8 +2,18 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/virtualbox.sh",
-      "only": ["virtualbox"]
+      "only": ["virtualbox"],
+      "scripts": [
+         "scripts/virtualbox.sh"
+      ],
+      "override": {
+        "virtualbox": {
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        },
+        "vmware": {
+          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+        }
+      }
     },
     {
       "type": "shell",
@@ -99,6 +109,5 @@
         "cpuid.coresPerSocket": "1"
       }
     }
-  ],
-  "post-processors": ["vagrant"]
+  ]
 }
