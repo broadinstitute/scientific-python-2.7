@@ -1,7 +1,12 @@
 Scientific computing with Python 2.7
 ====================================
 
-Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others built into a Docker image (www.docker.io)
+Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others built into Virtual Machines such as Virtuablbox, VMWare, Docker, KVM, Zen
+
+Usage
+-----
+
+After starting the box, change the root password which is currently set to scivm.
 
 Output from pip freeze
 ----------------------
