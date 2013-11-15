@@ -2,6 +2,11 @@
   "provisioners": [
     {
       "type": "shell",
+      "script": "virtualbox.sh",
+      "only": ["virtualbox"]
+    },
+    {
+      "type": "shell",
       "scripts": [
         "scripts/aptlocal.sh",
         "scripts/deps.sh",
