@@ -1,6 +1,11 @@
 {
   "provisioners": [
     {
+      "type": "file",
+      "source": "scripts/",
+      "destination": "/tmp"
+    },
+    {
       "type": "shell",
       "only": ["virtualbox"],
       "scripts": [
@@ -91,6 +96,7 @@
         "keyboard-configuration/layout=USA keyboard-configuration/variant=USA console-setup/ask_detect=false <wait>",
         "initrd=/install/initrd.gz -- <enter><wait>"
       ],
+      "headless": true,
       "boot_wait": "4s",
       "disk_size": 10140,
       "guest_os_type": "ubuntu",
@@ -108,6 +114,11 @@
         "numvcpus": "2",
         "cpuid.coresPerSocket": "1"
       }
+    },
+    {
+      "type": "docker",
+      "image": "ubuntu",
+      "export_path": "image.tar"
     }
   ]
 }

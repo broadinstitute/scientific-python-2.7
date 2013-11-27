@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 # Copyright (c) 2014 Science Automation, Inc. http://www.scivm.com.  All rights reserved.
 # 
@@ -26,6 +27,9 @@
 # SOFTWARE.
 #
 source /opt/ve/bin/activate
+export BLAS=/usr/local/lib/libfblas.a
+export LAPACK=/usr/local/lib/liblapack.a
+
 pip install distribute==0.6.49
 pip install pyzmq==14.0.0
 pip install numpy==1.8.0

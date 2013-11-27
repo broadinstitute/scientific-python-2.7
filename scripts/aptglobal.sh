@@ -30,9 +30,10 @@
 # Clean up, then set apt repository to universal settting
 #
 apt-get clean
-echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
+
 apt-get update
 
 # remove proxy
 echo "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\"" > /etc/environment
-
