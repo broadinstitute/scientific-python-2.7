@@ -26,8 +26,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-source /opt/ve/bin/activate
-LD_LIBRARY_PATH=/usr/local/lib/intel
+export LD_LIBRARY_PATH=/usr/local/lib/intel
 
 # build numpy from source to use mkl blas and lapack
 cd /tmp
