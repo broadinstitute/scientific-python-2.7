@@ -6,7 +6,11 @@ Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others
 Usage
 -----
 
-After starting the box, change the root password which is currently set to scivm.
+Root password is not set.  After launching the Docker container, you can use lxc-attach -n <full_container_id> and set the root password if you want.
+
+For example:
+lxc-attach -n 71dde0b7118d9475c0cebbd0dff4ac9fd70b004d6b2ceb5c36a4a517e9432d99
+passwd root
 
 Output from pip freeze
 ----------------------
