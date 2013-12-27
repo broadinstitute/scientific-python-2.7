@@ -25,6 +25,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+#
+#  Use this if not building with intel compilers and you do not already
+#  have an optimized lapack library
+#
 mkdir -p /root/src
 cd /root/src/
 wget http://www.netlib.org/lapack/lapack.tgz

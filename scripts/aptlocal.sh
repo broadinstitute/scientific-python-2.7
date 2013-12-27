@@ -28,19 +28,18 @@
 # if there is a file called /root/home then use the local mirror
 #
 # set proxy
-echo "http_proxy=http://10.5.1.34:3128" >> /etc/environment
 
-if [ -e "/root/home" ]
-then 
+#if [ -e "/root/home" ]
+#then 
 #   echo "Acquire::http::Proxy \"http://10.5.1.34:3128\";" >> /etc/apt/apt.conf
    echo "deb ftp://mirror.hetzner.de/ubuntu/packages precise main restricted universe multiverse" > /etc/apt/sources.list
    echo "deb ftp://mirror.hetzner.de/ubuntu/packages precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
-else
-   echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list
-   echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
-   echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse" >> /etc/apt/sources.list
-fi
+#else
+#   echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list
+#   echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
+#   echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse" >> /etc/apt/sources.list
+#fi
 echo "This is sources.list:"
 cat /etc/apt/sources.list
 apt-get update
-apt-get upgrade -y
+#apt-get upgrade -y

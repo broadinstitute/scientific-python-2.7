@@ -2,3 +2,4 @@ packer_cache/*
 output-virtualbox/*
 output-vmware/*
 *.log
+intel/*

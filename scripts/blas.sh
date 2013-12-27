@@ -25,6 +25,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+# Use this if you are not using intel compilers and you do not have an 
+# optimized blas library
+#
 mkdir -p /root/src/
 cd /root/src/
 wget http://www.netlib.org/blas/blas.tgz
