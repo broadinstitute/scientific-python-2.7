@@ -26,7 +26,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-virtualenv --python=python2.7 /opt/ve
-source /opt/ve/bin/activate
+#virtualenv --python=python2.7 /opt/ve
+#source /opt/ve/bin/activate
 chmod 775 /tmp/requirements.sh
 /tmp/requirements.sh

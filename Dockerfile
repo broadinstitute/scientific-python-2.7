@@ -31,11 +31,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # add scripts to image
 ADD scripts /tmp
 ADD files /tmp
-ADD intel /opt/intel
-
-
-#ENV BLAS /usr/local/lib/libfblas.a
-#ENV LAPACK /usr/local/lib/liblapack.a
+ADD intel /usr/local/lib/intel
 
 RUN chmod 755 /tmp/base.sh; /tmp/base.sh
 

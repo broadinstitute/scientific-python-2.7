@@ -42,11 +42,11 @@ touch /root/home
 # hdf5
 /tmp/hdf5_install.sh
 
-# blas
-/tmp/blas.sh
+# blas - don't use this when using mkl
+#/tmp/blas.sh
 
-# lapack
-/tmp/lapack.sh
+# lapack - don't user this when using mkl
+#/tmp/lapack.sh
 
 # scientific python packages
 /tmp/packages.sh

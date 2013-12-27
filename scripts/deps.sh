@@ -72,11 +72,3 @@ pip install virtualenv==1.10.1
 # motd
 mv /tmp/motd /etc/motd
 rm -rf /etc/update-motd.d
-
-# set root password
-echo 'root:scivm' | chpasswd
-
-# create a virtual environment
-virtualenv --python=python2.7 /opt/ve
-
-
