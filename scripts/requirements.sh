@@ -27,8 +27,7 @@
 # SOFTWARE.
 #
 source /opt/ve/bin/activate
-source  /opt/intel/mkl/bin/mklvars.sh intel64
-LD_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64
+LD_LIBRARY_PATH=/usr/local/lib/intel
 
 # build numpy from source to use mkl blas and lapack
 cd /tmp
