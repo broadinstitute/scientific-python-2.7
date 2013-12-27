@@ -28,9 +28,6 @@
 #
 source /opt/ve/bin/activate
 source  /opt/intel/mkl/bin/mklvars.sh intel64
-#MKL_LIB_PATH=/opt/intel/composerxe/mkl/lib/intel64
-#OMP_LIB_PATH=/opt/intel/composerxe/compiler/lib/intel64
-#export LD_LIBRARY_PATH=${MKL_LIB_PATH}:${OMP_LIB_PATH}
 LD_LIBRARY_PATH=/opt/intel/composer_xe_2013_sp1.0.080/mkl/lib/intel64
 
 # build numpy from source to use mkl blas and lapack
@@ -52,3 +49,60 @@ python setup.py config install
 cd /tmp
 rm -r -f /tmp/scipy-0.13.2 scipy-0.13.2
 
+
+# install rest of scipy
+pip install distribute==0.6.49
+pip install pyzmq==14.0.0
+pip install ipython==1.1.0
+pip install matplotlib==1.3.1
+pip install pandas==0.12.0
+pip install sympy==0.7.3
+pip install nose==1.3.0
+
+# other packages
+pip install argparse==1.2.1
+pip install beautifulsoup==3.2.0
+pip install biopython==1.62
+pip install boto==2.15.0
+pip install cython==0.19.2
+pip install faulthandler==2.2
+pip install h5py==2.2.0
+pip install html5lib==0.99
+pip install httplib2==0.8
+pip install lxml==3.2.3
+pip install mdp==3.3
+pip install mysql-python==1.2.4
+pip install nltk==2.0.4
+pip install numexpr==2.2.2
+pip install oursql==0.9.3.1
+pip install paramiko==1.8.0
+pip install PIL==1.1.7
+pip install ply==3.4
+pip install psutil==1.1.3
+pip install psycopg2==2.5.1
+pip install pycrypto==2.6.1
+pip install pyface==4.3.0
+pip install pyfits==3.1.2
+pip install pyflakes==0.7.3
+pip install pyglet==1.1.4
+pip install pymc==2.3
+pip install pyparsing==2.0.1
+pip install Pyrex==0.9.9
+pip install python-dateutil==2.1
+pip install pytz==2013.7
+pip install PyYAML==3.10
+pip install scikits-image==0.7.1
+pip install scikit-learn==0.14.1
+pip install patsy==0.2.1
+pip install statsmodels==0.5.0
+pip install simplejson==3.3.1
+pip install six==1.4.1
+pip install SQLAlchemy==0.8.3
+pip install storm==0.20
+pip install tables==3.0.0
+pip install tornado==3.1.1
+pip install traits==4.3.0
+pip install traitsui==4.3.0
+pip install Twisted==13.1.0
+pip install wsgiref==0.1.2
+pip install zope.interface==4.0.5
