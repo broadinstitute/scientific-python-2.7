@@ -4,6 +4,7 @@
 #
 mkdir intel
 cp -R /opt/intel/composerxe/mkl/lib/intel64/* intel
+cp -R /opt/intel/composerxe/compiler/lib/intel64/* intel
 cp /opt/intel/composerxe/mkl/lib/mic/*scala* intel
 
 # 

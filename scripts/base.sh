@@ -33,6 +33,10 @@ chmod 755 /tmp/*.sh
 touch /root/home
 /tmp/aptlocal.sh
 
+# set mkl into the system library path
+echo "/usr/local/lib/intel" > /etc/ld.so.conf.d/mkl.conf
+ldconfig
+
 # setup deadsnakes apt repo
 /tmp/repo.sh
 
@@ -45,7 +49,7 @@ touch /root/home
 # blas - don't use this when using mkl
 #/tmp/blas.sh
 
-# lapack - don't user this when using mkl
+# lapack - don't use this when using mkl
 #/tmp/lapack.sh
 
 # scientific python packages
