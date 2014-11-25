@@ -30,22 +30,22 @@ export LD_LIBRARY_PATH=/usr/local/lib/intel
 
 # build numpy from source to use mkl blas and lapack
 cd /tmp
-gunzip numpy-1.8.0.tar.gz
-tar xvf numpy-1.8.0.tar
-cd numpy-1.8.0
+gunzip numpy-1.8.2.tar.gz
+tar xvf numpy-1.8.2.tar
+cd numpy-1.8.2
 cp /tmp/site.cfg .
 python setup.py config install
 cd /tmp
-rm -r -f /tmp/numpy-1.8.0 numpy-1.8.0.tar.gz
+rm -r -f /tmp/numpy-1.8.2 numpy-1.8.2.tar.gz
 
 # build scipy from source to use mkl blas and lapack
 cd /tmp
-gunzip scipy-0.13.2.tar.gz
-tar xvf scipy-0.13.2.tar
-cd scipy-0.13.2
+gunzip scipy-0.14.0.tar.gz
+tar xvf scipy-0.14.0.tar
+cd scipy-0.14.0
 python setup.py config install
 cd /tmp
-rm -r -f /tmp/scipy-0.13.2 scipy-0.13.2
+rm -r -f /tmp/scipy-0.14.0 scipy-0.14.0
 
 
 # install rest of scipy
@@ -53,7 +53,7 @@ pip install distribute==0.6.49
 pip install pyzmq==14.0.0
 pip install ipython==1.1.0
 pip install matplotlib==1.3.1
-pip install pandas==0.12.0
+pip install pandas==0.14.1
 pip install sympy==0.7.3
 pip install nose==1.3.0
 
@@ -62,7 +62,7 @@ pip install argparse==1.2.1
 pip install beautifulsoup==3.2.0
 pip install biopython==1.62
 pip install boto==2.15.0
-pip install cython==0.19.2
+pip install cython==0.20.0
 pip install faulthandler==2.2
 pip install h5py==2.2.0
 pip install html5lib==0.99
@@ -71,7 +71,7 @@ pip install lxml==3.2.3
 pip install mdp==3.3
 pip install mysql-python==1.2.4
 pip install nltk==2.0.4
-pip install numexpr==2.2.2
+pip install numexpr==2.4
 pip install oursql==0.9.3.1
 pip install paramiko==1.8.0
 pip install PIL==1.1.7
@@ -104,3 +104,11 @@ pip install traitsui==4.3.0
 pip install Twisted==13.1.0
 pip install wsgiref==0.1.2
 pip install zope.interface==4.0.5
+
+# Others that we want at Broad Institute
+pip install pybedtools==0.6.6
+pip install natsort==3.5.0
+pip install pysam==0.7.8
+pip install memory_profiler==0.31
+pip install psutil==2.1.2
+pip install rpy2==2.4.3
