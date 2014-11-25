@@ -1,6 +1,8 @@
 Scientific computing with Python 2.7
 ====================================
 
+Forked by Lee Lichtenstein and modified to use the package versions used by recapseg and oncotator.
+
 Scipy stack Numpy, Scipy, Matplotlib, IPython, pandas, Sympy, nose + many others built into Virtual Machines such as Virtualbox, VMWare, Docker, KVM, Zen<br>
 
 [![Build Status](https://ci.scivm.com/jenkins/buildStatus/icon?job=scientific-python-2.7)](https://ci.scivm.com/jenkins/view/Science%20Images/job/scientific-python-2.7/)<br>
